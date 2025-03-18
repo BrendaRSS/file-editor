@@ -10,6 +10,8 @@ async function processData() {
             idade: person.idade + 1
         }));
 
+        updatedData.sort((a, b) => a.idade - b.idade);
+
         await fs.writeFile('updatedData.json', JSON.stringify(updatedData, null, 2), 'utf8');
         console.log('Arquivo updatedData.json criado com sucesso!');
     } catch (error) {
